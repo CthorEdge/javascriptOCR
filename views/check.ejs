@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OCR Scanning Response</title>
+</head>
+<body>
+    <h1>OCR RESULTS</h1>
+    <div id="ocrResults">
+        <h2>Invoice</h2>
+        <p>Invoice Number: <%= ocrResults.invoice.invoice_number %></p>
+        <p>Invoice Subtotal: <%= ocrResults.invoice.subtotal %></p>
+        <p>Invoice ppn: <%= ocrResults.invoice.ppn %></p>
+        
+        <h2>Faktur Pajak</h2>
+        <p>Nomor Faktur Pajak: <%= ocrResults.faktur_pajak.no_faktur_pajak %></p>
+        <p>Nama Pengusaha Kena Pajak: <%= ocrResults.faktur_pajak.nama_pengusaha_kena_pajak %></p>
+        <p>Alamat Pengusaha Kena Pajak: <%= ocrResults.faktur_pajak.alamat_pengusaha_kena_pajak %></p>
+        <p>NPWP Pengusaha Kena Pajak: <%= ocrResults.faktur_pajak.npwp_pengusaha_kena_pajak %></p>
+        <p>Nama Pembeli Kena Pajak: <%= ocrResults.faktur_pajak.nama_pembeli_kena_pajak %></p>
+        <p>Alamat Pembeli Kena Pajak: <%= ocrResults.faktur_pajak.alamat_pembeli_kena_pajak %></p>
+        <p>NPWP Pembeli Kena Pajak: <%= ocrResults.faktur_pajak.npwp_pembeli_kena_pajak %></p>
+        <p>Dasar Pengenaan Pajak: <%= ocrResults.faktur_pajak.dasar_pengenaan_pajak %></p>
+        <p>Total PPN: <%= ocrResults.faktur_pajak.total_ppn %></p>
+
+        <h2>Goods Receipt</h2>
+        <h3>Goods Receipt 1</h3>
+        <p>No GR: <%= ocrResults.goods_receipt[0].no_gr %></p>
+        <p>GR Date: <%= ocrResults.goods_receipt[0].goods_receipt_date %></p>
+        <p>GR Ref Document: <%= ocrResults.goods_receipt[0].no_ref_document_aka_delivery_notes %></p>
+        <p>Nama Vendor: <%= ocrResults.goods_receipt[0].nama_vendor %></p>
+        <p>No PO: <%= ocrResults.goods_receipt[0].no_po %></p>
+
+        <h3>Goods Receipt 2</h3>
+        <p>No GR: <%= ocrResults.goods_receipt[1].no_gr %></p>
+        <p>GR Date: <%= ocrResults.goods_receipt[1].goods_receipt_date %></p>
+        <p>GR Ref Document: <%= ocrResults.goods_receipt[1].no_ref_document_aka_delivery_notes %></p>
+        <p>Nama Vendor: <%= ocrResults.goods_receipt[1].nama_vendor %></p>
+        <p>No PO: <%= ocrResults.goods_receipt[1].no_po %></p>
+
+        <h2>Delivery Notes</h2>
+        <p>No Delivery Notes: <%= ocrResults.delivery_notes %></p>
+
+        <h2>Purchase Order</h2>
+        <p>No PO: <%= ocrResults.purchase_order.po_number %></p>
+        <p>PO Date: <%= ocrResults.purchase_order.po_date %></p>
+        <p>PO Delivery Date: <%= ocrResults.purchase_order.po_delivery_date %></p>
+        <p>No Vendor: <%= ocrResults.purchase_order.vendor_number %></p>
+        <h3>Materials:</h3>
+        <p>Material 1: <%= ocrResults.purchase_order.materials[0] %></p>
+        <p>Material 2: <%= ocrResults.purchase_order.materials[1] %></p>
+        <p>Material 3: <%= ocrResults.purchase_order.materials[2] %></p>
+
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
