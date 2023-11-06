@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OCR Result in Table Forms</title>
+    <style>
+        table {
+            border-collapse: collapse; /* Merge adjacent table borders */
+            width: 100%; /* Make the table take up the full width of its container */
+        }
+        th, td {
+            border: 1px solid #000; /* Add a 1px solid black border to table cells */
+            padding: 8px; /* Add some padding for spacing */
+        }
+    </style>
+</head>
+<body>
+    <h1>OCR RESULTS</h1>
+    <div id="ocrResults">
+        
+        <h1>PO Table</h1>
+        <table>
+            <tr>
+                <th>po_number</th>
+                <th>po_date</th>
+                <th>po_delivery_date</th>
+                <th>vendor_number</th>
+                <th>material_code</th>
+                <th>ref_part_no</th>
+                <th>material_name</th>
+                <th>unit_price</th>
+                <th>quantity</th>
+                <th>qty_desc</th>
+                <th>ext_price</th>
+            </tr>
+            <%- jsonRes.template2 %>
+        </table>
+
+        <h1>GR Table</h1>
+        <table>
+            <tr>
+                <th>gr_number</th>
+                <th>po_number</th>
+                <th>ref_document_number</th>
+                <th>gr_date</th>
+                <th>vendor_name</th>
+                <th>material_code</th>
+                <th>ref_part_no</th>
+                <th>material_name</th>
+                <th>quantity</th>
+                <th>qty_desc</th>
+            </tr>
+            <%- jsonRes.template1 %>
+        </table>
+
+        <h1>Delivery Notes Table</h1>
+        <table>
+            <tr>
+                <th>delivery_notes_number</th>
+            </tr>
+            <%- jsonRes.template3 %>
+        </table>
+
+        <h1>Invoice Table</h1>
+        <table>
+            <tr>
+                <th>invoice_number</th>
+                <th>subtotal</th>
+                <th>ppn</th>
+                <th>material_name</th>
+                <th>quantity</th>
+                <th>qty_units</th>
+                <th>unit_price</th>
+                <th>price_amount</th>
+            </tr>
+            <%- jsonRes.template4 %>
+        </table>
+
+        <h1>Tax Table</h1>
+        <table>
+            <tr>
+                <th>no_faktur_pajak</th>
+                <th>nama_pengusaha</th>
+                <th>alamat_pengusaha</th>
+                <th>npwp_pengusaha</th>
+                <th>nama_pembeli</th>
+                <th>alamat_pembeli</th>
+                <th>npwp_pembeli</th>
+                <th>dasar_pengenaan_pajak</th>
+                <th>total_ppn</th>
+            </tr>
+            <%- jsonRes.template5 %>
+        </table>
+
+    </div>
+
+    <form action="/extractExcel" method="GET" enctype="multipart/form-data">
+        <input type="submit" value="Export to Excel" />
+    </form>
+
+    <script src="main.js"></script>
+</body>
+</html>
